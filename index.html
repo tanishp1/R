@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#173c2e">
+  <meta name="description" content="Discover The Saffron Saga Restaurant in Kalyan: vibrant vegetarian North Indian curries, paneer dishes, vegan options and outdoor seating.">
+  <title>The Saffron Saga Restaurant | Vegetarian Dining in Kalyan</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #20251f;
+      --muted: #666c62;
+      --green: #173c2e;
+      --green-light: #245440;
+      --saffron: #e9a43a;
+      --cream: #faf7ef;
+      --paper: #fffdf8;
+      --line: #e9e3d6;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topbar {
+      position: relative;
+      z-index: 1;
+      background: var(--green);
+      color: #fff;
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      color: #fff;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: .01em;
+      text-decoration: none;
+    }
+
+    .brand span { color: #f1bd67; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      color: #f7f4ec;
+      font-size: .93rem;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover { color: #f1bd67; }
+
+    .nav-links .nav-cta {
+      padding: 9px 16px;
+      border: 1px solid #d5b47c;
+      border-radius: 999px;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      isolation: isolate;
+      background: #25342c;
+      color: #fff;
+    }
+
+    .hero::before {
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background:
+        url("https://lh3.googleusercontent.com/grass-cs/AABkmLcKiW8D3_6dRzORxzQCMPF9z-czOwF0TrZJ7LvTPJHzJPqvMApctysfgls_S1B_8ku-0C8ElC5novke1Qhk5gnsMbPsOKUAD31tLKdVlsbVyPYelElAHYsMAe9CxD88UksF89Z8fCRXm8rR=s294-w294-h220-n-k-no")
+        center 45% / cover no-repeat;
+      content: "";
+      transform: scale(1.03);
+    }
+
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(90deg, rgb(12 28 21 / 83%) 0%, rgb(12 28 21 / 56%) 52%, rgb(12 28 21 / 16%) 100%);
+      content: "";
+    }
+
+    .hero-content {
+      max-width: 690px;
+      padding-block: 80px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin: 0 0 18px;
+      color: #f2c576;
+      font-size: .79rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 24px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      line-height: 1.13;
+    }
+
+    h1 {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      letter-spacing: -.045em;
+    }
+
+    .hero-copy {
+      max-width: 525px;
+      margin: 21px 0 28px;
+      color: #f3f0e8;
+      font-size: 1.08rem;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 20px;
+      border: 1px solid transparent;
+      border-radius: 4px;
+      background: var(--saffron);
+      color: #22231e;
+      font-size: .94rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .button:hover {
+      background: #f2b958;
+      transform: translateY(-1px);
+    }
+
+    .button-outline {
+      border-color: rgb(255 255 255 / 75%);
+      background: transparent;
+      color: #fff;
+    }
+
+    .button-outline:hover {
+      background: rgb(255 255 255 / 12%);
+      color: #fff;
+    }
+
+    .rating-strip {
+      position: relative;
+      z-index: 2;
+      width: min(930px, calc(100% - 40px));
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: -38px auto 0;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      box-shadow: 0 12px 35px rgb(46 40 25 / 8%);
+    }
+
+    .rating-item {
+      min-height: 91px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 15px;
+      text-align: left;
+    }
+
+    .rating-item + .rating-item { border-left: 1px solid var(--line); }
+
+    .rating-mark {
+      color: #d99122;
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+
+    .rating-item strong {
+      display: block;
+      font-size: 1rem;
+    }
+
+    .rating-item small {
+      display: block;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    section { scroll-margin-top: 24px; }
+
+    .intro {
+      padding-block: 102px 82px;
+      text-align: center;
+    }
+
+    .section-label {
+      margin: 0 0 12px;
+      color: #9b6922;
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: clamp(2.1rem, 4vw, 3.3rem);
+      letter-spacing: -.035em;
+    }
+
+    .intro-copy {
+      max-width: 710px;
+      margin: 19px auto 0;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .features {
+      padding-block: 76px;
+      background: var(--cream);
+    }
+
+    .features-heading {
+      max-width: 650px;
+      margin-bottom: 35px;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      min-height: 185px;
+      padding: 27px 25px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+    }
+
+    .feature-number {
+      display: block;
+      margin-bottom: 15px;
+      color: #b67924;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 1.35rem;
+    }
+
+    .feature-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .gallery {
+      padding-block: 84px;
+    }
+
+    .gallery-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 27px;
+    }
+
+    .gallery-head p {
+      max-width: 370px;
+      margin: 0;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .photo-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 190px 190px;
+      gap: 12px;
+    }
+
+    .photo-grid img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      background: #e8e0d0;
+    }
+
+    .photo-grid img:first-child {
+      grid-row: span 2;
+    }
+
+    .visit {
+      padding-block: 77px;
+      background: var(--green);
+      color: #fff;
+    }
+
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 56px;
+    }
+
+    .visit h2 { color: #fff; }
+    .visit .section-label { color: #f2c576; }
+
+    .visit-copy {
+      max-width: 480px;
+      margin: 17px 0 25px;
+      color: #e2e8e0;
+    }
+
+    .visit-details {
+      display: grid;
+      gap: 17px;
+      padding: 25px;
+      border: 1px solid rgb(255 255 255 / 23%);
+      background: rgb(255 255 255 / 5%);
+    }
+
+    .visit-details strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #f2c576;
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .visit-details p {
+      margin: 0;
+      color: #fff;
+    }
+
+    .visit-details a {
+      color: #fff;
+      text-decoration-color: rgb(255 255 255 / 55%);
+      text-underline-offset: 3px;
+    }
+
+    footer {
+      padding-block: 25px;
+      background: #102c21;
+      color: #d6dfd7;
+      font-size: .86rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 32px, 560px); }
+      .nav { min-height: 68px; }
+      .nav-links { gap: 15px; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { min-height: 540px; }
+      .hero::after {
+        background: linear-gradient(90deg, rgb(12 28 21 / 82%), rgb(12 28 21 / 44%));
+      }
+      .hero-content { padding-block: 70px; }
+      .rating-strip { width: calc(100% - 32px); }
+      .rating-item { min-height: 84px; gap: 7px; padding: 9px 5px; }
+      .rating-mark { font-size: 1.2rem; }
+      .rating-item strong { font-size: .85rem; }
+      .rating-item small { font-size: .7rem; }
+      .intro { padding-block: 78px 64px; }
+      .features, .gallery { padding-block: 62px; }
+      .feature-grid { grid-template-columns: 1fr; gap: 12px; }
+      .feature-card { min-height: auto; }
+      .gallery-head { align-items: start; flex-direction: column; }
+      .photo-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 220px 150px;
+      }
+      .photo-grid img:first-child { grid-column: span 2; grid-row: auto; }
+      .photo-grid img:last-child { display: none; }
+      .visit-grid { grid-template-columns: 1fr; gap: 30px; }
+      .visit { padding-block: 62px; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#home">The <span>Saffron Saga</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#story">Our story</a>
+        <a href="#highlights">Food &amp; dining</a>
+        <a href="#visit">Find us</a>
+        <a class="nav-cta" href="https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTF2bDhkbjVxdhgBOgMI8A0%3D&amp;hl=en-IN&amp;gl=in&amp;ssta=1&amp;fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&amp;utm_source=search&amp;gei=W6DNatXZIbeVseMP4dCH6As&amp;ei=W6DNatXZIbeVseMP4dCH6As&amp;fo_s=OA&amp;opi=89978449&amp;orderType=1&amp;ebb=1&amp;foub=mcpp" target="_blank" rel="noopener noreferrer">Order online</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-content">
+        <p class="eyebrow">Vegetarian dining · Kalyan</p>
+        <h1>A little spice.<br>A lot of heart.</h1>
+        <p class="hero-copy">Gather around for vibrant North Indian curries, paneer favourites and a welcoming table made for sharing.</p>
+        <div class="actions">
+          <a class="button" href="https://www.google.com/searchviewer/42?cvd=CLw_EicKJeICIjIgEhkiF9LX29IPEQoNL2cvMTF2bDhkbjVxdhgBOgMI8A0%3D&amp;hl=en-IN&amp;gl=in&amp;ssta=1&amp;fo_m=MfohQo559jFvMUOzJVpjPL1YMfZ3bInYwBDuMfaXTPp5KXh-&amp;utm_source=search&amp;gei=W6DNatXZIbeVseMP4dCH6As&amp;ei=W6DNatXZIbeVseMP4dCH6As&amp;fo_s=OA&amp;opi=89978449&amp;orderType=1&amp;ebb=1&amp;foub=mcpp" target="_blank" rel="noopener noreferrer">Order online</a>
+          <a class="button button-outline" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Saffron%20Saga%20Restaurant%2C%20Vegas%20Residency%2C%20Birla%20College%20Campus%20Road%2C%20Kalyan%2C%20Maharashtra%20421301" target="_blank" rel="noopener noreferrer">Get directions</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="rating-strip" aria-label="Restaurant highlights">
+      <div class="rating-item">
+        <span class="rating-mark" aria-hidden="true">★</span>
+        <div><strong>4.4 / 5</strong><small>Google rating</small></div>
+      </div>
+      <div class="rating-item">
+        <span class="rating-mark" aria-hidden="true">♡</span>
+        <div><strong>Vegetarian</strong><small>Vegan options</small></div>
+      </div>
+      <div class="rating-item">
+        <span class="rating-mark" aria-hidden="true">⌂</span>
+        <div><strong>Made to gather</strong><small>Outdoor seating</small></div>
+      </div>
+    </div>
+
+    <section class="intro wrap" id="story">
+      <p class="section-label">Welcome to The Saffron Saga</p>
+      <h2>Good food brings us together.</h2>
+      <p class="intro-copy">Find us in Kalyan for a generous vegetarian spread inspired by North Indian favourites. Whether it’s a meal with friends or a relaxed family outing, there’s room at our table for everyone.</p>
+    </section>
+
+    <section class="features" id="highlights">
+      <div class="wrap">
+        <div class="features-heading">
+          <p class="section-label">A feast for every kind of gathering</p>
+          <h2>Find your favourite at the table.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-number">01</span>
+            <h3>North Indian favourites</h3>
+            <p>Explore comforting curries and richly flavoured vegetarian classics.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">02</span>
+            <h3>Paneer &amp; plant-based</h3>
+            <p>Paneer dishes, vegan options and a menu with something for different tastes.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-number">03</span>
+            <h3>Room to linger</h3>
+            <p>Enjoy outdoor seating and an all-you-can-eat experience with your group.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery wrap" aria-labelledby="gallery-title">
+      <div class="gallery-head">
+        <div>
+          <p class="section-label">A glimpse of the experience</p>
+          <h2 id="gallery-title">Come on in.</h2>
+        </div>
+        <p>Take a look around, then stop by and make yourself at home.</p>
+      </div>
+      <div class="photo-grid">
+        <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLcKiW8D3_6dRzORxzQCMPF9z-czOwF0TrZJ7LvTPJHzJPqvMApctysfgls_S1B_8ku-0C8ElC5novke1Qhk5gnsMbPsOKUAD31tLKdVlsbVyPYelElAHYsMAe9CxD88UksF89Z8fCRXm8rR=s294-w294-h220-n-k-no" alt="Photo shared on The Saffron Saga Restaurant listing" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLc1irmlC0wQnig0HJ_WElxcC_KPW_yf3b5Try4CWNLZWm5fhyxdtGdKmcLJwrQ1bfN87tVtxnF2-XkW_vniemGMQc_8HIIQ9-WtKgDEV3oOG1XRf7X1QeyOWqucNAUI-R5CkrFTOA=s294-w294-h220-k-no" alt="Photo shared on The Saffron Saga Restaurant listing" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLeekVDmllZ9rlO0JaBRhhhakYV6EQaAZW7muuwxy5ZIQPBP6HlJTaDGd2l6SNI_zArzGLSmCs9fZ1iRVF97HOdFdvFqsmJIBXZo5Y1KgJCvqeqK2ML0wcX_NQW66LyFTFMBhJSlaihZZnw=s294-w294-h220-n-k-no" alt="Photo shared on The Saffron Saga Restaurant listing" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLd5UNK1nQTltP4xoD-zAjtcvqGVdosl0IR43Khaq0fgHvkgVHvToxOxmKUCMfu2ntNnopYSDKNmJ3iMBBJEqmkHCktvdCl44Jm3vf4YUPOm8tnfV6Em33RfDGNdZmhMosLI4PZd=s294-w294-h220-k-no" alt="Photo shared on The Saffron Saga Restaurant listing" loading="lazy">
+        <img src="https://lh3.googleusercontent.com/grass-cs/AABkmLf6AQT10x0mpZ_p1DysNjYX0JuTUdpCEj13iYlHUxuYBbu4yIvZKv7INOHajAVts6uvLMzuE5ovN2jLZhgZaygop3-FPVvFqPWb-XR6dTIu-ENmp_Zl_LybhCnyxL2oZZOmCEniQpT_hLyI=s220-w165-h220-n-k-no" alt="Photo shared on The Saffron Saga Restaurant listing" loading="lazy">
+      </div>
+    </section>
+
+    <section class="visit" id="visit">
+      <div class="wrap visit-grid">
+        <div>
+          <p class="section-label">Your table is waiting</p>
+          <h2>Come find us in Kalyan.</h2>
+          <p class="visit-copy">Drop in for a meal, call ahead with a question, or get directions to the restaurant.</p>
+          <div class="actions">
+            <a class="button" href="https://www.google.com/maps/search/?api=1&amp;query=The%20Saffron%20Saga%20Restaurant%2C%20Vegas%20Residency%2C%20Birla%20College%20Campus%20Road%2C%20Kalyan%2C%20Maharashtra%20421301" target="_blank" rel="noopener noreferrer">Get directions</a>
+            <a class="button button-outline" href="tel:+918291606606">Call the restaurant</a>
+          </div>
+        </div>
+        <div class="visit-details">
+          <div>
+            <strong>Address</strong>
+            <p>Vegas Residency, Birla College Campus Road,<br>opposite Paradise Hotel, Kalyan West,<br>Maharashtra 421301</p>
+          </div>
+          <div>
+            <strong>Phone</strong>
+            <p><a href="tel:+918291606606">082916 06606</a></p>
+          </div>
+          <div>
+            <strong>Good to know</strong>
+            <p>Open late · Listed closing time 12:30 AM<br>Hours may vary; please call to confirm.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <p>© <span id="year">2026</span> The Saffron Saga Restaurant</p>
+      <p>Vegetarian dining in Kalyan, Maharashtra</p>
+    </div>
+  </footer>
+</body>
+</html>
